@@ -5,7 +5,30 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
 <body>
-    
+
+    <input id="ingredient-input" placeholder="Ingredients">
+    <input id="recipe-input" placeholder="Food">
+    <button id="search" onclick="fetch()">Search</button>
+
+    <script id="ingredients-template" type="text/x-handlebars-template">
+        {{#each recipes}}
+        <div class="recipe-container">
+            <div id="title">{{title}}</div>
+            <ul>
+                <li>{{ingredients}}</li>
+            </ul>
+            <img id="img" src="{{thumbnail}}">
+            <a  id="link" href="{{href}}"></a>
+        </div>
+        {{/each}}
+    </script>
+
+
+
+
+
+
+
     <script src="./handlebars/dist/handlebars.js"></script>
     <script src="./jquery/dist/jquery.js"></script>   
     <script src="Renderer.js"></script>
